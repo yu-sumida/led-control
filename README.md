@@ -1,49 +1,39 @@
-# Japanese Sentiment Analysis App (portfolio-app-github)
-
-This is a web application for analyzing the sentiment of Japanese tweets, built with Python and Streamlit.
+# Virtual LED Controller (C language)
 
 For Japanese, see [README_ja.md](./README_ja.md)
 
+## Overview
+This is a C program that allows you to control the ON/OFF state of 8 virtual LEDs from the command line.  
+The LED states can be saved to and loaded from a file.
+
 ## Features
+- Control the ON/OFF state of each LED
+- Display the current state of all LEDs
+- Save and load the LED states from a file
+- Input error handling
+- Simple command-line user interface
 
-- Automatically classifies Japanese text as **Positive** or **Negative** using AI
-- Supports batch analysis by uploading a CSV file
-- Visualizes results with bar charts and time-series graphs
-- Allows downloading analysis results as a CSV file
+## Commands
 
+| Command | Description                         |
+|:-------:|:-----------------------------------|
+| `on`    | Turns ON the specified LED (0-7)   |
+| `off`   | Turns OFF the specified LED (0-7)  |
+| `show`  | Displays the current LED states    |
+| `save`  | Saves the current state to a file  |
+| `load`  | Loads the LED states from a file   |
+| `exit`  | Exits the program                  |
 
-## Technologies Used
+## Example usage
 
-- Python 3
-- Streamlit (Web app framework)
-- Hugging Face Transformers (Sentiment analysis model)
-- Altair (Data visualization)
-- Pandas (Data processing)
-
-
-## Installation & Usage
-
-### 1. Install required libraries
-
-`pip install -r requirements.txt`
-
-### 2.Run the app
-
-`streamlit run simple_app_github.py`
-
-### 3. Open the app in your browser
-Click the URL shown in your terminal (for example: http://localhost:8501).
-
-## Notes
-- The sentiment analysis model (jarvisx17/japanese-sentiment-analysis) supports only two classes: Positive and Negative.
-- No API keys or personal information are included in this repository.
-- If you upload a CSV file, please ensure that the contents consist of simple sentences.
-
-```markdown
-| Japanese                       | English translation                        |
-| ------------------------------ | ------------------------------------------ |
-| 今日は最高に楽しかった！            | I had an amazing time today!               |
-| 明日は仕事で憂鬱…                  | I feel down because I have to work tomorrow... |
-| なんだか気分が乗らない             | I just can’t get in the mood.              |
-| カフェでまったりしてリフレッシュ！ | I relaxed at a café and refreshed myself!  |
-| 寝坊して最悪な気分だ               | I overslept and feel terrible.             |
+```sh
+Enter command: on
+Enter LED number (0-7): 3
+LED 3 turned ON
+Enter command: show
+Current LED states: 0 0 0 1 0 0 0 0
+Enter command: save
+LED states saved to led_control.txt
+Enter command: load
+LED states loaded from led_control.txt
+Enter command: exit
